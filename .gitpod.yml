@@ -23,7 +23,7 @@ jetbrains:
     plugins:
       - izhangzhihao.rainbow.brackets
       
- tasks:
+tasks:
   - name: Fresh
     init: deno run -A -r https://fresh.deno.dev .
     command: deno task start --watch
