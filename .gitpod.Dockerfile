@@ -6,6 +6,3 @@ FROM gitpod/workspace-full:2022-10-14-03-46-27
 RUN brew install deno
 
 # Apply user-specific settings
-WORKDIR /workspace
-
-RUN deno run -A -r https://fresh.deno.dev deno-pod

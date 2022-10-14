@@ -14,7 +14,7 @@ ports:
   - name: web
     port: 8000
     visibility: public
-    onOpen: open-preview
+    onOpen: ignore
       
 tasks:
   - name: Fresh
