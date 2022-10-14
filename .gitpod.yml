@@ -1,6 +1,20 @@
 image:
   file: Dockerfile
+
+github:
+  prebuilds:
+    main: true
+    branches: true
+    pullRequests: true
+    addCheck: false
+    addComment: false
+    addBadge: true
+
 tasks:
-  - command: docker build -t app . && docker run -it --init -p 8000:8000 app
+  - command: |
+    deno --version
+    deno run --allow-net ./main.ts
 ports:
   - port: 8000
+jetbrains:
+  - jetbrains.webstorm
