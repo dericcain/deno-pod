@@ -1,1 +1,6 @@
-
+image:
+  file: Dockerfile
+tasks:
+  - command: docker build -t app . && docker run -it --init -p 8000:8000 app
+ports:
+  - port: 8000
