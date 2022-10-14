@@ -1,21 +1,9 @@
-FROM denoland/deno:latest
+# You can find the new timestamped tags here: https://hub.docker.com/r/gitpod/workspace-full/tags
+FROM gitpod/workspace-full:2022-10-14-03-46-27
 
-# The port that your application listens to.
-EXPOSE 8000
+# Install custom tools, runtime, etc.
+# install-packages is a wrapper for `apt` that helps skip a few commands in the docker env.
+RUN brew install deno
+RUN deno run -A -r https://fresh.deno.dev .
 
-WORKDIR /app
-
-# Prefer not to run as root.
-USER deno
-
-# Cache the dependencies as a layer (the following two steps are re-run only when deps.ts is modified).
-# Ideally cache deps.ts will download and compile _all_ external files used in main.ts.
-COPY deps.ts .
-RUN deno cache deps.ts
-
-# These steps will be re-run upon each file change in your working directory:
-ADD . .
-# Compile the main app so that it doesn't need to be compiled each startup/entry.
-RUN deno cache main.ts
-
-CMD ["run", "--allow-net", "main.ts"]
+# Apply user-specific settings
