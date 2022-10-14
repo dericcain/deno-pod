@@ -1,5 +1,5 @@
 image:
-  file: Dockerfile
+  file: .gitpod.Docker
 
 github:
   prebuilds:
@@ -10,11 +10,21 @@ github:
     addComment: false
     addBadge: true
 
-tasks:
-  - command: |
-    deno --version
-    deno run --allow-net ./main.ts
 ports:
-  - port: 8000
+  - name: web
+    port: 1993
+    visibility: public
+    onOpen: open-preview
+
 jetbrains:
-  - jetbrains.webstorm
+  webstorm:
+    prebuilds:
+      version: stable
+    plugins:
+      - izhangzhihao.rainbow.brackets
+      
+ tasks:
+  - name: Fresh
+    init: deno run -A -r https://fresh.deno.dev .
+    command: deno task start --watch
+      
