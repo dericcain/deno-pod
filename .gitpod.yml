@@ -12,16 +12,9 @@ github:
 
 ports:
   - name: web
-    port: 1993
+    port: 8000
     visibility: public
     onOpen: open-preview
-
-jetbrains:
-  webstorm:
-    prebuilds:
-      version: stable
-    plugins:
-      - izhangzhihao.rainbow.brackets
       
 tasks:
   - name: Fresh
