@@ -1,5 +1,5 @@
 image:
-  file: .gitpod.Docker
+  file: .gitpod.Dockerfile
 
 github:
   prebuilds:
@@ -25,6 +25,5 @@ jetbrains:
       
 tasks:
   - name: Fresh
-    init: deno run -A -r https://fresh.deno.dev .
     command: deno task start --watch
       
