@@ -10,6 +10,18 @@ github:
     addComment: false
     addBadge: true
 
+jetbrains:
+  webstorm:
+    prebuilds:
+      version: latest
+    plugins:
+      - com.chrisrm.idea.MaterialThemeU
+      - com.mallowigi
+      - String Manipulation
+      - deno
+      - izhangzhihao.rainbow.brackets
+
+
 ports:
   - name: web
     port: 8000
