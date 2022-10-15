@@ -1,14 +1,13 @@
-
 image:
   file: .gitpod.Dockerfile
 
 github:
   prebuilds:
-    main: true
+    master: true
     branches: true
     pullRequests: true
-    addCheck: false
-    addComment: false
+    addCheck: true
+    addComment: true
     addBadge: true
 
 jetbrains:
